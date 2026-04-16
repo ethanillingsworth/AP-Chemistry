@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss";
+
+@theme {
+    --color-background: var(--color-stone-900);
+    --color-foreground: var(--color-stone-800);
+    --color-border: var(--color-stone-600);
+    --color-text: var(--color-stone-200);
+    --color-accent: var(--color-emerald-600);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+    body {
+        @apply flex flex-row bg-background text-text overflow-hidden h-dvh scheme-dark;
+    }
+
+    .content {
+        @apply flex flex-col w-full p-12 overflow-auto;
+    }
+
+    .sidebar {
+        @apply flex flex-col gap-2 bg-foreground border-r border-border text-text p-4 px-6 w-fit h-dvh;
+
+        > * {
+            @apply my-1;
+        }
+
+        h1 {
+            @apply text-xl font-bold p-4 px-2;
+        }
+
+        h2 {
+            @apply text-lg font-semibold border-b border-border pb-2;
+        }
+
+        a {
+            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+        }
+    }
+
+    .md {
+        * {
+            @apply my-1;
+        }
+
+        h1 {
+            @apply text-2xl font-bold mb-8 border-b border-border pb-2;
+        }
+        h2 {
+            @apply text-xl font-semibold border-t border-border pt-4 mt-4 mb-4;
+        }
+
+        a {
+            @apply text-accent underline;
+        }
+
+        .katex-html {
+            @apply hidden;
+        }
+    }
 }

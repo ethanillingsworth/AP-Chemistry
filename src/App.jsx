@@ -3,6 +3,8 @@ import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import UnitPage from "./Pages/UnitPage";
+import LessonPage from "./Pages/LessonPage";
+
 function App() {
     return (
         <Router>
@@ -10,6 +12,7 @@ function App() {
             <div className="content">
                 <Routes>
                     <Route path="/:unit" element={<UnitPage />} />
+                    <Route path="/:unit/:lesson" element={<LessonPage />} />
                 </Routes>
             </div>
         </Router>

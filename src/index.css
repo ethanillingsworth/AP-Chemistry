@@ -1,63 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-	--color-background: var(--color-stone-900);
-	--color-foreground: var(--color-stone-800);
-	--color-border: var(--color-stone-600);
-	--color-text: var(--color-stone-200);
-	--color-accent: var(--color-teal-300);
+    --color-background: var(--color-stone-900);
+    --color-foreground: var(--color-stone-800);
+    --color-border: var(--color-stone-600);
+    --color-text: var(--color-stone-200);
+    --color-accent: var(--color-teal-300);
 }
 
 @layer base {
-	body {
-		@apply flex flex-row bg-background text-text overflow-hidden h-dvh scheme-dark;
-	}
+    body {
+        @apply flex flex-row bg-background text-text overflow-hidden h-dvh scheme-dark;
+    }
 
-	.content {
-		@apply flex flex-col w-full p-12 overflow-auto;
-	}
+    .content {
+        @apply flex flex-col w-full p-12 overflow-auto;
+    }
 
-	.sidebar {
-		@apply bg-foreground border-r border-border text-text h-dvh w-1/5 overflow-auto;
+    .sidebar {
+        @apply bg-foreground border-r border-border text-text h-dvh w-1/2 flex flex-col overflow-auto;
 
-		.wrapper {
-			@apply flex flex-col gap-2 p-4 px-6;
-		}
-		> * {
-			@apply my-1;
-		}
+        .wrapper {
+            @apply flex flex-col gap-2 p-4 px-6;
+        }
+        > * {
+            @apply my-1;
+        }
 
-		h1 {
-			@apply text-xl font-bold p-4 px-2 border-b border-border bg-foreground;
-		}
+        h1 {
+            @apply text-xl font-bold p-4 px-2 border-b border-border bg-foreground;
+        }
 
-		h2 {
-			@apply text-lg font-semibold border-b border-border pb-2;
-		}
+        h2 {
+            @apply text-lg font-semibold border-b border-border pb-2;
+        }
 
-		a {
-			@apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
-		}
-	}
+        a {
+            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+        }
+    }
 
-	.md {
-		* {
-			@apply my-1;
-		}
+    .md {
+        * {
+            @apply my-1;
+        }
 
-		h1 {
-			@apply text-2xl font-bold mb-8 border-b border-border pb-2;
-		}
-		h2 {
-			@apply text-xl font-semibold border-t border-border pt-4 mt-4 mb-4;
-		}
+        h1 {
+            @apply text-2xl font-bold mb-8 border-b border-border pb-2;
+        }
+        h2 {
+            @apply text-xl font-semibold border-t border-border pt-4 mt-4 mb-4;
+        }
 
-		a {
-			@apply text-accent underline;
-		}
+        a {
+            @apply text-accent underline;
+        }
 
-		.katex-html {
-			@apply hidden;
-		}
-	}
+        .katex-html {
+            @apply hidden;
+        }
+    }
 }

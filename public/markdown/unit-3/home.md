@@ -1,4 +1,4 @@
-# Unit 3 | Intermolecular Forces and Properties
+# Unit 3 | Substances & Mixtures
 
 **Exam Weight:** 18–22% of the AP Exam
 

@@ -1,4 +1,4 @@
-# Unit 1 | Atomic Structure & Properties
+# Unit 1 | Atomic Structure
 
 **Exam Weight:** 7–9% of the AP Exam
 

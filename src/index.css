@@ -18,7 +18,7 @@
     }
 
     .sidebar {
-        @apply bg-foreground border-r border-border text-text h-dvh w-1/2 flex flex-col overflow-auto;
+        @apply bg-foreground border-r border-border text-text h-dvh min-w-fit flex flex-col overflow-auto;
 
         .wrapper {
             @apply flex flex-col gap-2 p-4 px-6;

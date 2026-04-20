@@ -1,4 +1,4 @@
-# Unit 2 | Molecular and Ionic Compound Structure & Properties
+# Unit 2 | Compound Structure
 
 **Exam Weight:** 7–9% of the AP Exam
 

@@ -11,6 +11,10 @@
 @layer base {
     body {
         @apply flex flex-row bg-background text-text overflow-hidden h-dvh scheme-dark;
+
+        a {
+            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+        }
     }
 
     .content {
@@ -34,18 +38,19 @@
         h2 {
             @apply text-lg font-semibold border-b border-border pb-2;
         }
+    }
 
-        a {
-            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+    .multipanel {
+        @apply flex flex-row top-0 p-4 sticky h-dvh bg-foreground border-l border-border text-text w-lg;
+
+        .panels > * {
+            @apply h-full w-full gap-2;
         }
     }
 
     .toc {
-        @apply bg-foreground border-l border-border text-text w-md flex flex-row h-dvh sticky top-0 p-4;
+        @apply flex flex-col gap-2 w-full h-full;
 
-        .inner {
-            @apply flex flex-col gap-2;
-        }
         .heading {
             @apply text-lg font-bold mb-4;
         }
@@ -63,6 +68,10 @@
         a {
             @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
         }
+    }
+
+    .chat {
+        @apply flex flex-col gap-2 w-full;
     }
 
     .md {

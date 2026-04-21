@@ -2,6 +2,7 @@ import { Marked } from "marked";
 import { useEffect, useState } from "react";
 import markedKatex from "marked-katex-extension";
 import { gfmHeadingId } from "marked-gfm-heading-id";
+import MultiPanel from "../MultiPanel";
 
 export default function MarkdownPage({ content }) {
     const [html, setHtml] = useState("");
@@ -38,20 +39,7 @@ export default function MarkdownPage({ content }) {
                 className="md"
                 dangerouslySetInnerHTML={{ __html: html }}
             ></div>
-            <div className="toc">
-                <div className="inner">
-                    <span className="heading">Table of Contents</span>
-                    {headings.map((heading, index) => (
-                        <a
-                            key={index}
-                            className={`level-${heading.level}`}
-                            href={`#${heading.text.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                            {heading.text}
-                        </a>
-                    ))}
-                </div>
-            </div>
+            <MultiPanel></MultiPanel>
         </div>
     );
 }

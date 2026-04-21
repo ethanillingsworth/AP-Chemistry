@@ -14,7 +14,7 @@
     }
 
     .content {
-        @apply flex flex-col w-full p-12 overflow-auto;
+        @apply flex flex-col w-full overflow-auto;
     }
 
     .sidebar {
@@ -40,9 +40,36 @@
         }
     }
 
+    .toc {
+        @apply bg-foreground border-l border-border text-text w-md flex flex-row h-dvh sticky top-0 p-4;
+
+        .inner {
+            @apply flex flex-col gap-2;
+        }
+        .heading {
+            @apply text-lg font-bold mb-4;
+        }
+
+        .level-1 {
+            @apply text-base font-semibold;
+        }
+        .level-2 {
+            @apply text-base ml-4;
+        }
+        .level-3 {
+            @apply text-sm ml-8;
+        }
+
+        a {
+            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+        }
+    }
+
     .md {
+        @apply p-12 w-full;
+
         * {
-            @apply my-1;
+            @apply my-2;
         }
 
         h1 {

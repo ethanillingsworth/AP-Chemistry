@@ -1,5 +1,5 @@
 import { marked } from "marked";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { model } from "../firebase/firebase";
 
 function LameyChat({ response }) {
@@ -31,16 +31,17 @@ export default function LameyBot() {
     const [chats, setChats] = useState([
         // <LameyBot response="Hello! How can I help you today?" />,
     ]);
-    const [userChats, setUserChats] = useState([
-        { text: "This is a sample message" },
-    ]);
+    const [userChats, setUserChats] = useState([]);
     const [input, setInput] = useState("");
 
     function sendMessage() {
         setChats([...chats, <UserChat text={input} />]);
         setInput("");
         setUserChats([...userChats, { text: input }]);
+    }
 
+    useEffect(() => {
+        if (!userChats || userChats.length === 0) return;
         model
             .generateContent(userChats)
             .then((response) => {
@@ -56,7 +57,7 @@ export default function LameyBot() {
                     <LameyChat response={err.message} />,
                 ]);
             });
-    }
+    }, [chats]);
 
     return (
         <div className="lamey-bot flex flex-col">

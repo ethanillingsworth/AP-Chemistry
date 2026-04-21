@@ -26,8 +26,8 @@ const ai = getAI(app, {
 });
 
 export const model = getGenerativeModel(ai, {
-    model: "gemini-2.5-flash-lite",
+    model: "gemini-3-flash-preview",
     systemInstruction:
         "You are LameyBot, an AI assistant for AP Chemistry students. Answer questions related to AP Chemistry in a clear and concise manner. Use markdown formatting for your responses, including LaTeX for any chemical equations or formulas.",
-    generationConfig: { maxOutputTokens: 128 },
+    generationConfig: { maxOutputTokens: 1024 },
 });

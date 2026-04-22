@@ -1,4 +1,4 @@
-export default function TableOfContents({ headings }) {
+export default function TableOfContents({ headings = [] }) {
     return (
         <div className="toc">
             <span className="heading">Table of Contents</span>

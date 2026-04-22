@@ -39,7 +39,7 @@ export default function MarkdownPage({ content }) {
                 className="md"
                 dangerouslySetInnerHTML={{ __html: html }}
             ></div>
-            <MultiPanel></MultiPanel>
+            <MultiPanel headings={headings}></MultiPanel>
         </div>
     );
 }

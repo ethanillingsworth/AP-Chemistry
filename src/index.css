@@ -41,22 +41,24 @@
     }
 
     .multipanel {
-        @apply flex flex-row top-0 p-6 sticky h-dvh bg-foreground border-l border-border text-text w-lg;
-
+        @apply flex flex-row top-0 sticky h-dvh;
+        .panels {
+            @apply flex flex-row gap-6 bg-foreground border-l p-6 border-border text-text w-2xs;
+        }
         .panels > * {
-            @apply h-full w-full gap-2;
+            @apply h-full gap-2 w-full;
         }
     }
 
     .toc {
-        @apply flex flex-col gap-2 w-full h-full;
+        @apply flex flex-col gap-2 h-full overflow-auto;
 
         .heading {
             @apply text-lg font-bold mb-4;
         }
 
         .level-1 {
-            @apply text-base font-semibold;
+            @apply text-base font-semibold text-nowrap;
         }
         .level-2 {
             @apply text-base ml-4;
@@ -66,7 +68,7 @@
         }
 
         a {
-            @apply text-text hover:text-accent transition-colors duration-200 text-nowrap;
+            @apply text-text hover:text-accent transition-colors duration-200 text-wrap;
         }
     }
 

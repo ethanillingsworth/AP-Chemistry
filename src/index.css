@@ -5,7 +5,7 @@
     --color-foreground: var(--color-stone-800);
     --color-border: var(--color-stone-600);
     --color-text: var(--color-stone-200);
-    --color-accent: var(--color-teal-300);
+    --color-accent: var(--color-emerald-300);
 }
 
 @layer base {
@@ -41,7 +41,7 @@
     }
 
     .multipanel {
-        @apply flex flex-row top-0 p-4 sticky h-dvh bg-foreground border-l border-border text-text w-lg;
+        @apply flex flex-row top-0 p-6 sticky h-dvh bg-foreground border-l border-border text-text w-lg;
 
         .panels > * {
             @apply h-full w-full gap-2;
@@ -71,29 +71,54 @@
     }
 
     .chat {
-        @apply flex flex-col gap-2 w-full;
+        @apply flex flex-col gap-4 w-full;
+
+        .chat-message {
+            @apply flex flex-col gap-4;
+        }
+    }
+
+    input {
+        @apply p-2 border border-border rounded bg-background text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
+    }
+
+    textarea {
+        @apply p-2 border border-border rounded bg-background text-text focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent resize-none;
+    }
+
+    button {
+        @apply p-2 border border-border rounded bg-accent text-background hover:bg-accent/90 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent;
     }
 
     .md {
-        @apply p-12 w-full;
+        @apply p-12 w-full leading-relaxed;
 
-        * {
+        > * {
             @apply my-2;
+        }
+
+        li {
+            @apply my-2;
+        }
+
+        ul ul,
+        ol ol {
+            @apply pl-4;
         }
 
         h1 {
             @apply text-2xl font-bold mb-8 border-b border-border pb-2;
         }
         h2 {
-            @apply text-xl font-semibold border-t border-border pt-4 mt-4 mb-4;
+            @apply text-xl font-semibold border-t border-border pt-4 mt-6 mb-6;
         }
 
         a {
             @apply text-accent underline;
         }
+    }
 
-        .katex-html {
-            @apply hidden;
-        }
+    .katex-html {
+        @apply hidden;
     }
 }
